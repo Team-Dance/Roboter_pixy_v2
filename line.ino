@@ -13,10 +13,10 @@ unsigned long  Nowtime = millis();
     auslesen();
     gerade();
     tcs();
-  /*  if( f1+f2+f3 < 4500)
+   if( f1+f2+f3 < 4500)
 {
-//  Raum();
-}*/
+  Raum();
+}
     if(millis() - Nowtime >= 1000)
     {
     
@@ -119,7 +119,7 @@ void auslesen()
    Mi = analogRead(A2);
    Li = analogRead(A1);
    La= analogRead(A0);
-//   irVal=  analogRead(A5);
+   irVal=  analogRead(A5);
     Serial.print(La);
     Serial.print("---");
     Serial.print(Li);

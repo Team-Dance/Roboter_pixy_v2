@@ -9,26 +9,30 @@ Pixy2 pixy;  //pixy-object
 
 Servo Servo1;
 Servo Servo2;
+Servo Servo3;
+Servo Servo4;
 int La;
 int Li;                     //Lightsensors
 int Mi;
 int Ri;
 int Ra;
 int R = 0;
-int grenzLa = 320;         //set sensortresholds
-int grenzLi = 320;         //set sensortresholds
-int grenzMi = 300;
-int grenzRi = 320;
-int grenzRa = 320;  
+int grenzLa = 330;         //set sensortresholds
+int grenzLi = 330;         //set sensortresholds
+int grenzMi = 320;
+int grenzRi = 330;
+int grenzRa = 330;  
+int irVal;
 
 void setup() {
-  Setup();
+  
+    Setup();
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  
+    Line();         
+    green();
 
-Line();         
-green();
 }

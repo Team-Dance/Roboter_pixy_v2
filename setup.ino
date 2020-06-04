@@ -21,6 +21,11 @@ void Setup()
   pinMode(A4, INPUT);
   pinMode(A5, INPUT);
 
+  pinMode(38, INPUT_PULLUP);
+  pinMode(39, INPUT_PULLUP);
+
+    pinMode(A15, INPUT);
+
    pixels.begin();
   
   Serial.begin(115200);
