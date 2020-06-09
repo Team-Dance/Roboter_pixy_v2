@@ -166,6 +166,15 @@ void gerade()                       //geradeaus
   Serial.println("Gerade");
   delay(1);
 }
+void RechtsBack()
+{
+  analogWrite(rechtsV, 0);
+  analogWrite(rechtsR, 250);
+  analogWrite(linksV, 0);
+  analogWrite(linksR, 0);
+  Serial.println("Gerade");
+  delay(1);
+}
 void Rampe()                       //geradeaus
 {
   analogWrite(rechtsV, 255);
@@ -180,7 +189,7 @@ void back()                        //zurück
 {
 
   analogWrite(rechtsV, 0);
-  analogWrite(rechtsR, v1+22);
+  analogWrite(rechtsR, v1+15);
   analogWrite(linksV, 0);
   analogWrite(linksR, v1);
   Serial.println("Zurück");

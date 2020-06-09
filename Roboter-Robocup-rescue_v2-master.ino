@@ -7,10 +7,10 @@
  
 Pixy2 pixy;  //pixy-object
 
-Servo Servo1;
-Servo Servo2;
-Servo Servo3;
-Servo Servo4;
+Servo hebenR;
+Servo hebenL;
+Servo schrankeL;
+Servo schrankeR;
 int La;
 int Li;                     //Lightsensors
 int Mi;
