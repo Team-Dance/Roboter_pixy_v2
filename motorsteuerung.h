@@ -4,7 +4,7 @@ int linksV = 3;
 int linksR = 4;
 int rechtsV = 5;
 int rechtsR = 6;
-int v1=140;
+int v1=145;
 int v2=110;
 void leichtGerade()
 {
@@ -69,10 +69,10 @@ void RampedreheRechts()                    //leichtes Korrigieren rechts
 
 void dreheLinks()                    //leichtes Korrigieren links
 {
-  analogWrite(rechtsV, v1+22);
+  analogWrite(rechtsV, v1+35);
   analogWrite(rechtsR, 0);
   analogWrite(linksV, 0);
-  analogWrite(linksR, v2);
+  analogWrite(linksR, v2+15);
   Serial.println("Links");
   delay(2);
 }
@@ -89,10 +89,10 @@ void RampedreheLinks()                    //leichtes Korrigieren links
 
 void dreheStarkLinks()               //starkes Korrigieren links
 {
-  analogWrite(rechtsV, v1+32);
+  analogWrite(rechtsV, v1+45);
   analogWrite(rechtsR, 0);
   analogWrite(linksV, 0);
-  analogWrite(linksR, v1+18);
+  analogWrite(linksR, v1+20);
   Serial.println("Stark Links");
   delay(2);
 }
@@ -127,10 +127,10 @@ void drehe90Rechts2()             //90 Grad Kurve rechts
 
 void drehe90Links()             //90 Grad Kurve rechts
 {
-  analogWrite(rechtsV, v2+22);
+  analogWrite(rechtsV, v1+45);
   analogWrite(rechtsR, 0);
   analogWrite(linksV, 0);
-  analogWrite(linksR, v1);
+  analogWrite(linksR, v1+20);
   delay(10);
 }
 void drehe90Links2()             //90 Grad Kurve rechts
@@ -159,7 +159,7 @@ void turn()             //90 Grad Kurve rechts
 }
 void gerade()                       //geradeaus
 {
-  analogWrite(rechtsV, v1+28);    //v1+15
+  analogWrite(rechtsV, v1+22);    //v1+15
   analogWrite(rechtsR, 0);
   analogWrite(linksV, v1);
   analogWrite(linksR, 0);

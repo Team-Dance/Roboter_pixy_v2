@@ -1,6 +1,7 @@
 void Line()
 {
    auslesen();
+   rampe();
   
   if(La>grenzLa && Li>grenzLi  && Mi>grenzMi && Ri>grenzRi && Ra>grenzRa)
 {  
@@ -76,6 +77,7 @@ auslesen();
 
   if(La<grenzLa && Li<grenzLi && Mi<grenzMi && Ri>grenzRi && Ra>grenzRa) 
   {
+    green();
     gerade();
     delay(200);
     dreheStarkLinks();
@@ -92,6 +94,7 @@ auslesen();
   auslesen();
     if(La>grenzLa && Li>grenzLi && Mi<grenzMi && Ri<grenzRi && Ra<grenzRa) 
   {
+    green();
     gerade();
     delay(200);
     dreheStarkRechts();

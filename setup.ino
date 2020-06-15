@@ -23,6 +23,7 @@ void Setup()
 
   pinMode(38, INPUT_PULLUP);
   pinMode(39, INPUT_PULLUP);
+  pinMode(26, INPUT_PULLUP);
 
     pinMode(A15, INPUT);
 

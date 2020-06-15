@@ -1,6 +1,6 @@
 void heben()
 {
-for(int i=0; i<47; i++){    
+for(int i=0; i<45; i++){    
       hebenR.write(i+2);
       hebenL.write(180-i);
       delay(5);
@@ -9,7 +9,7 @@ for(int i=0; i<47; i++){
   schrankeL.write(0);
   schrankeR.write(180);
   delay(300);
-  for(int i=49; i<90; i++){    
+  for(int i=45; i<85; i++){    
       hebenR.write(i+2);
       hebenL.write(180-i);
       delay(5);
