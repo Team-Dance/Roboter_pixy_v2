@@ -107,7 +107,14 @@ void dreheStarkRechts()             //starkes Korrigieren rechts
   delay(2);
 }
 
-
+void umfahrenRechts()             //90 Grad Kurve rechts
+{
+  analogWrite(rechtsV, 80);
+  analogWrite(rechtsR, 0);
+  analogWrite(linksV, 200);
+  analogWrite(linksR, 0);
+  delay(10);
+}
 void drehe90Rechts()             //90 Grad Kurve rechts
 {
   analogWrite(rechtsV, 0);
@@ -159,7 +166,7 @@ void turn()             //90 Grad Kurve rechts
 }
 void gerade()                       //geradeaus
 {
-  analogWrite(rechtsV, v1+22);    //v1+15
+  analogWrite(rechtsV, v1+25);    //v1+15
   analogWrite(rechtsR, 0);
   analogWrite(linksV, v1);
   analogWrite(linksR, 0);
@@ -192,6 +199,17 @@ void back()                        //zurück
   analogWrite(rechtsR, v1+15);
   analogWrite(linksV, 0);
   analogWrite(linksR, v1);
+  Serial.println("Zurück");
+  delay(1);
+}
+
+void RaumBack()                     //zurück
+{
+
+  analogWrite(rechtsV, 0);
+  analogWrite(rechtsR, 240+10);
+  analogWrite(linksV, 0);
+  analogWrite(linksR, 240);
   Serial.println("Zurück");
   delay(1);
 }

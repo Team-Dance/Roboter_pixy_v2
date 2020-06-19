@@ -6,5 +6,5 @@ void Senken()
       hebenL.write(180-i);
       delay(5);
       }
-  delay(2000);
+  delay(500);
 }

@@ -1,3 +1,5 @@
+
+//#include "tcs230.h"
 void Raum()
 {
   pixels.clear();
@@ -14,10 +16,13 @@ attaches();
     gerade();
     delay(150);
     dreheStarkLinks();
-    delay(850);
+    delay(900);
     Stop();
     delay(200);
-
+  gerade();
+  delay(800);
+  Stop();
+  delay(1);
     Senken();
     delay(200);
     drehe90Rechts();
@@ -28,31 +33,41 @@ attaches();
       
       Raumanfang:
       z++;
-      while(digitalRead(38) ==0 &&  digitalRead(39) == 0)
+      tcs();
+      while(digitalRead(38) ==0 &&  digitalRead(39) == 0 && f1+f2+f3 > 4500)
       {
-      back();
-      if(z >=3)
+        tcs();
+      RaumBack();
+      if(z < 3)
       {
           unsigned long timer = millis();
-        while(digitalRead(38) ==0 &&  digitalRead(39) == 0)
+        while(digitalRead(38) ==0 &&  digitalRead(39) == 0 && f1+f2+f3 > 4500)
       {
-          back();
+        RaumBack();
+        tcs();
           if(millis() - timer <=2500 && digitalRead(39)==1)
           {
             gerade();
             delay(200);
             drehe90Links();
-            delay(350);
+            delay(300);
             back();
             delay(350);
             drehe90Rechts();
-            delay(370);
+            delay(320);
             
           }
       }
       }
       
      
+      }
+      if(f1+f2+f3 < 4500)
+      {
+        gerade();
+        delay(500);
+        ausgangDrehen();
+        goto Raumanfang;
       }
       gerade();
       delay(300);
@@ -84,6 +99,7 @@ attaches();
         Stop();
         delay(10);
         Ecke();
+        z=0;
         delay(100);
         goto Raumanfang;
         
@@ -94,7 +110,7 @@ attaches();
       drehe90Links();
       delay(2050);
       gerade();
-      delay(550);
+      delay(580);
       Stop();
       delay(20);
       drehe90Rechts();
@@ -103,7 +119,7 @@ attaches();
       Senken();
       delay(300);
       drehe90Rechts();
-      delay(150);
+      delay(160);
       
     }
 
@@ -164,11 +180,31 @@ schrankeR.detach();
   heben();
   delay(50);
   back();
-  delay(220);
+  delay(600);
   drehe90Links();
   delay(430);
   Stop();
   Senken();
+  dreheStarkRechts();
+  delay(250);
   
+  
+}
+void ausgangDrehen()
+{
+
+    drehe90Links();
+      delay(2050);
+      gerade();
+      delay(580);
+      Stop();
+      delay(20);
+      drehe90Rechts();
+      delay(1000);
+      Stop();
+     // Senken();
+      delay(300);
+      drehe90Rechts();
+      delay(160);
   
 }
