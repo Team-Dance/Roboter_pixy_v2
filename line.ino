@@ -184,7 +184,7 @@ Serial.print(panOffset);
       back();
       delay(20);
       Stop();
-      delay(500);
+      delay(100);
       auslesen();
       if(Ra<grenzRa&&Ri<grenzRi)
       {
@@ -218,7 +218,7 @@ Serial.print(panOffset);
       back();
       delay(20);
       Stop();
-      delay(500);
+      delay(100);
       
       
       auslesen();
@@ -251,6 +251,7 @@ Serial.print(panOffset);
     {
         if(tiltOffset>0&&tiltOffset2>0)
 {
+  
        turn();
       delay(800);
       auslesen();

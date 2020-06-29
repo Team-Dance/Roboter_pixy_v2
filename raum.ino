@@ -2,6 +2,7 @@
 //#include "tcs230.h"
 void Raum()
 {
+  
   pixels.clear();
   pixels.show();
     pixy.setLamp(0, 0);         //activate the led´s
@@ -15,10 +16,222 @@ attaches();
     delay(500);
     gerade();
     delay(150);
-    dreheStarkLinks();
+    dreheStarkRechts();
     delay(900);
     Stop();
-    delay(200);
+    delay(100);
+    auslesen(); 
+    if(irVal>200) {
+      dreheStarkRechts();
+      delay(970); 
+      Stop();
+      delay(1);
+      Senken();
+      delay(200);
+      int z = 0;
+     while(true)
+     {
+      
+      Raumanfang:
+      z++;
+      tcs();
+      while(digitalRead(38) ==0 &&  digitalRead(39) == 0 && f1+f2+f3 > 4500)
+      {
+        tcs();
+      RaumBack();
+      if(z < 3)
+      {
+          unsigned long timer = millis();
+        while(digitalRead(38) ==0 &&  digitalRead(39) == 0 && f1+f2+f3 > 4500)
+      {
+        RaumBack();
+        tcs();
+          if(millis() - timer <=2500 && digitalRead(39)==1)
+          {
+            gerade();
+            delay(200);
+            drehe90Links();
+            delay(300);
+            back();
+            delay(350);
+            drehe90Rechts();
+            delay(320);
+            
+          }
+      }
+      }
+      
+     
+      }
+      if(f1+f2+f3 < 4500)
+      {
+        gerade();
+        delay(500);
+        ausgangDrehen();
+        goto Raumanfang;
+      }
+      gerade();
+      delay(300);
+      Stop();
+      delay(250);
+      heben();
+      delay(200);
+      back();
+      delay(950);
+      Serial.println(analogRead(A15));
+      if(analogRead(A15)>850)
+      {
+        
+      }
+      else{
+      RechtsBack();
+      delay(2300);
+      
+      }
+      Stop();
+      if(analogRead(A15)<850)
+      {
+        Stop();
+        delay(200);
+        gerade();
+        delay(200);
+        back();
+        delay(200);
+        Stop();
+        delay(10);
+        Ecke();
+        z=0;
+        delay(100);
+        goto Raumanfang;
+        
+      }
+
+      gerade();
+      delay(300);
+      drehe90Links();
+      delay(2050);
+      gerade();
+      delay(580);
+      Stop();
+      delay(20);
+      drehe90Rechts();
+      delay(1000);
+      Stop();
+      Senken();
+      delay(300);
+      drehe90Rechts();
+      delay(160);
+      
+    }
+     } 
+
+    
+    else{
+      dreheStarkLinks();
+      delay(1950); 
+      Stop();
+      delay(1);
+      Senken();
+      delay(200);
+      int z = 0;
+     while(true)
+      {
+      
+      Raumanfang1:
+      z++;
+      tcs();
+      while(digitalRead(38) ==0 &&  digitalRead(39) == 0 && f1+f2+f3 > 4500)
+      {
+        tcs();
+      RaumBack1();
+      if(z < 3)
+      {
+          unsigned long timer = millis();
+        while(digitalRead(38) ==0 &&  digitalRead(39) == 0 && f1+f2+f3 > 4500)
+      {
+        RaumBack1();
+        tcs();
+          if(millis() - timer <=2500 && digitalRead(39)==1)
+          {
+            gerade();
+            delay(200);
+            drehe90Rechts();
+            delay(300);
+            back();
+            delay(350);
+            drehe90Links();
+            delay(320);
+            
+          }
+      }
+      }
+      
+     
+      }
+      if(f1+f2+f3 < 4500)
+      {
+        gerade();
+        delay(500);
+        ausgangDrehen();
+        goto Raumanfang;
+      }
+      gerade();
+      delay(300);
+      Stop();
+      delay(250);
+      heben();
+      delay(200);
+      back();
+      delay(950);
+      Serial.println(analogRead(A15));
+      if(analogRead(A15)>850)
+      {
+        
+      }
+      else{
+      LinksBack();
+      delay(2300);
+      
+      }
+      Stop();
+      if(analogRead(A15)<850)
+      {
+        Stop();
+        delay(200);
+        gerade();
+        delay(200);
+        back();
+        delay(200);
+        Stop();
+        delay(10);
+        Ecke();
+        z=0;
+        delay(100);
+        goto Raumanfang;
+        
+      }
+
+      gerade();
+      delay(300);
+      drehe90Rechts();
+      delay(2050);
+      gerade();
+      delay(580);
+      Stop();
+      delay(20);
+      drehe90Links();
+      delay(1000);
+      Stop();
+      Senken();
+      delay(300);
+      drehe90Links();
+      delay(160);
+      }
+       
+    
+    }  
+   
+    /*
   gerade();
   delay(800);
   Stop();
@@ -124,7 +337,7 @@ attaches();
     }
 
 
-   
+   */
     
 }
     void attaches()
@@ -207,4 +420,4 @@ void ausgangDrehen()
       drehe90Rechts();
       delay(160);
   
-}
+} 
