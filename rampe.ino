@@ -1,17 +1,17 @@
 void rampe()
 {
- if(digitalRead(26)==0)
+ if(digitalRead(28)==0)
   {
     R=0;
   }
   
-if(digitalRead(26)==1)
+if(digitalRead(28)==1)
  {
   R++;
   if(R>=60)
   {
 
-    while(digitalRead(26)==1)
+    while(digitalRead(28)==1)
     {
  if(Mi<grenzMi)
  {Rampe();}

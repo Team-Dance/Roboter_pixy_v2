@@ -4,7 +4,7 @@ int linksV = 3;
 int linksR = 4;
 int rechtsV = 5;
 int rechtsR = 6;
-int v1=145;
+int v1=143;
 int v2=110;
 void leichtGerade()
 {
@@ -24,12 +24,21 @@ void RaumRechts()
   delay(2);
 }
 
+void RaumLinks()
+{
+  analogWrite(rechtsV, v2);
+  analogWrite(rechtsR, 0);
+  analogWrite(linksV, 0);
+  analogWrite(linksR, v1);
+  delay(2);
+}
+
 void RaumGerade()
 {
   analogWrite(rechtsV, 0);
-  analogWrite(rechtsR, v1+5);
+  analogWrite(rechtsR, 255);
   analogWrite(linksV, 0);
-  analogWrite(linksR, v1);
+  analogWrite(linksR, 230);
   delay(2);
 }
 void leichtRechts()
@@ -52,7 +61,7 @@ void dreheRechts()                    //leichtes Korrigieren rechts
 {
   analogWrite(rechtsV, 0);
   analogWrite(rechtsR, v2+22);
-  analogWrite(linksV, v1);
+  analogWrite(linksV, v1+5);
   analogWrite(linksR, 0);
   Serial.println("Rechts");
   delay(2);
@@ -89,10 +98,10 @@ void RampedreheLinks()                    //leichtes Korrigieren links
 
 void dreheStarkLinks()               //starkes Korrigieren links
 {
-  analogWrite(rechtsV, v1+45);
+  analogWrite(rechtsV, v1+5);      //45
   analogWrite(rechtsR, 0);
   analogWrite(linksV, 0);
-  analogWrite(linksR, v1+20);
+  analogWrite(linksR, v1+22);       //20
   Serial.println("Stark Links");
   delay(2);
 }
@@ -101,7 +110,7 @@ void dreheStarkRechts()             //starkes Korrigieren rechts
 {
   analogWrite(rechtsV, 0);
   analogWrite(rechtsR, v1+22);
-  analogWrite(linksV, v1);
+  analogWrite(linksV, v1+5);
   analogWrite(linksR, 0);
   Serial.println("Stark Rechts");
   delay(2);
@@ -166,7 +175,7 @@ void turn()             //90 Grad Kurve rechts
 }
 void gerade()                       //geradeaus
 {
-  analogWrite(rechtsV, v1+25);    //v1+15
+  analogWrite(rechtsV, v1+20);    //v1+15
   analogWrite(rechtsR, 0);
   analogWrite(linksV, v1);
   analogWrite(linksR, 0);
@@ -205,9 +214,9 @@ void back()                        //zurück
 {
 
   analogWrite(rechtsV, 0);
-  analogWrite(rechtsR, v1+15);
+  analogWrite(rechtsR, v1);
   analogWrite(linksV, 0);
-  analogWrite(linksR, v1);
+  analogWrite(linksR, v1+15);
   Serial.println("Zurück");
   delay(1);
 }
@@ -226,9 +235,9 @@ void RaumBack1()                     //zurück
 {
 
   analogWrite(rechtsV, 0);
-  analogWrite(rechtsR, 240);
+  analogWrite(rechtsR, 240-10);
   analogWrite(linksV, 0);
-  analogWrite(linksR, 240+10);
+  analogWrite(linksR, 240+15);
   Serial.println("Zurück");
   delay(1);
 }

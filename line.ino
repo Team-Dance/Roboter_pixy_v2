@@ -48,18 +48,22 @@ unsigned long  Nowtime = millis();
 if((La>grenzLa && Li<grenzLi && Mi>grenzMi && Ri>grenzRi && Ra>grenzRa) || (La>grenzLa && Li<grenzLi && Mi<grenzMi && Ri>grenzRi && Ra>grenzRa))          //wenn der seonsor li/li+mi auf schwarz ist
   {
 
-   
+   while(Mi>grenzMi)
+   {
       auslesen();
       dreheLinks();
+   }
     
   }
 auslesen();
   if((La>grenzLa && Li>grenzLi && Mi>grenzMi && Ri<grenzRi && Ra>grenzRa) || (La>grenzLa && Li>grenzLi && Mi<grenzMi && Ri<grenzRi && Ra>grenzRa))        //wenn der sensor ri/ri+mi schwarz ist
   {
    
- 
+  while(Mi>grenzMi)
+  {
       auslesen();
       dreheRechts();
+  }
     
   }
 
@@ -67,17 +71,22 @@ auslesen();
  if((La<grenzLa && Li>grenzLi && Mi>grenzMi && Ri>grenzRi && Ra>grenzRa) || (La<grenzLa && Li<grenzLi && Mi>grenzMi && Ri>grenzRi && Ra>grenzRa))          //wenn der seonsor la/la+li auf schwarz ist
  {
 
+while(Mi>grenzMi)
+  {
       auslesen();
       dreheStarkLinks();
+  }
     
   }
 auslesen();
   if((La>grenzLa && Li>grenzLi && Mi>grenzMi && Ri>grenzRi && Ra<grenzRa) || (La>grenzLa && Li>grenzLi && Mi>grenzMi && Ri<grenzRi && Ra<grenzRa))        //wenn der sensor ra/ra+ri schwarz ist
   {
     
-
+while(Mi>grenzMi)
+  {
       auslesen();
       dreheStarkRechts();
+  }
     
   }
   auslesen();
@@ -91,7 +100,7 @@ auslesen();
      return;}
      else{*/
     gerade();
-    delay(200);
+    delay(180);
     dreheStarkLinks();
     delay(150);
     auslesen();
@@ -100,8 +109,8 @@ auslesen();
       auslesen();
       dreheStarkLinks();
     }
-   back();
-   delay(30);
+  /* back();
+   delay(20);*/
   }//}
   auslesen();
     if(La>grenzLa && Li>grenzLi && Mi<grenzMi && Ri<grenzRi && Ra<grenzRa) 
@@ -113,7 +122,7 @@ auslesen();
      return;}
       else{*/
     gerade();
-    delay(200);
+    delay(180);
     dreheStarkRechts();
     delay(150);
     auslesen();
@@ -122,8 +131,8 @@ auslesen();
       auslesen();
       dreheStarkRechts();
     }
-    back();
-    delay(30);
+   /* back();
+    delay(20);*/
   }//}
   grn=false;
   auslesen();
@@ -141,6 +150,7 @@ void auslesen()
    Li = analogRead(A1);
    La= analogRead(A0);
    irVal=  analogRead(A5);
+   irVal2 = analogRead(A13);
     Serial.print(La);
     Serial.print("---");
     Serial.print(Li);
@@ -198,7 +208,7 @@ Serial.print(panOffset);
       gerade();
       delay(580);
       dreheStarkRechts();
-      delay(800);
+      delay(750);
       auslesen();
      while(Mi>grenzMi && Li>grenzLi && La>grenzLa)
         {
@@ -234,7 +244,7 @@ Serial.print(panOffset);
       gerade();
       delay(580);
       dreheStarkLinks();
-      delay(800);
+      delay(750);
       auslesen();
       while(Mi>grenzMi&& Ri>grenzRi && Ra>grenzRa)
         {
@@ -251,7 +261,15 @@ Serial.print(panOffset);
     {
         if(tiltOffset>0&&tiltOffset2>0)
 {
-  
+  gerade();
+  delay(200);
+  auslesen();
+  if(Ra<grenzRa&&La<grenzLa)
+  {
+    gerade();
+    delay(800);
+    return;
+  }
        turn();
       delay(800);
       auslesen();

@@ -9,10 +9,10 @@ void Setup()
    // Setting frequency-scaling to 20%
           digitalWrite(SENSOR_S0, HIGH);
           digitalWrite(SENSOR_S1, LOW);
-                              pinMode(linksV, OUTPUT);
-                              pinMode(linksR, OUTPUT);
-                              pinMode(rechtsV, OUTPUT);
-                              pinMode(rechtsR, OUTPUT);
+                pinMode(linksV, OUTPUT);
+                pinMode(linksR, OUTPUT);
+                pinMode(rechtsV, OUTPUT);
+                pinMode(rechtsR, OUTPUT);
                               
   pinMode(A0, INPUT);           //sensoren als input definieren
   pinMode(A1, INPUT);
@@ -23,9 +23,10 @@ void Setup()
 
   pinMode(38, INPUT_PULLUP);
   pinMode(39, INPUT_PULLUP);
-  pinMode(26, INPUT_PULLUP);
+  pinMode(28, INPUT_PULLUP);
 
     pinMode(A15, INPUT);
+    pinMode(A13, INPUT);
 
    pixels.begin();
   
