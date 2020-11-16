@@ -13,8 +13,7 @@ void gerade(){                   //geradeaus
   analogWrite(rechtsR, 0);
   analogWrite(linksV, v1);
   analogWrite(linksR, 0);
-  Serial.println("Gerade");
-  delay(1);
+  delay(2);
 }
 
 void dreheRechts(){              //leichtes Korrigieren rechts
@@ -22,7 +21,6 @@ void dreheRechts(){              //leichtes Korrigieren rechts
   analogWrite(rechtsR, v2+22);
   analogWrite(linksV, v1+5);
   analogWrite(linksR, 0);
-  Serial.println("Rechts");
   delay(2);
 }
 
@@ -31,7 +29,6 @@ void dreheStarkRechts(){         //starkes Korrigieren rechts
   analogWrite(rechtsR, v1+22);
   analogWrite(linksV, v1+5);
   analogWrite(linksR, 0);
-  Serial.println("Stark Rechts");
   delay(2);
 }
 
@@ -56,7 +53,6 @@ void dreheLinks(){               //leichtes Korrigieren links
   analogWrite(rechtsR, 0);
   analogWrite(linksV, 0);
   analogWrite(linksR, v2+15);
-  Serial.println("Links");
   delay(2);
 }
 
@@ -90,8 +86,7 @@ void back(){                     //zurück
   analogWrite(rechtsR, v1);
   analogWrite(linksV, 0);
   analogWrite(linksR, v1+15);
-  Serial.println("Zurück");
-  delay(1);
+  delay(2);
 }
 
 void Stop(){                     //Stop
@@ -99,8 +94,7 @@ void Stop(){                     //Stop
   analogWrite(rechtsR, 0);
   analogWrite(linksV, 0);
   analogWrite(linksR, 0);
-  Serial.println("Stop");
-  delay(20);
+  delay(10);
 }
 
 
@@ -111,8 +105,7 @@ void RampeGerade(){              //geradeaus auf Rampe (schneller)
   analogWrite(rechtsR, 0);
   analogWrite(linksV, 255);
   analogWrite(linksR, 0);
-  Serial.println("Gerade");
-  delay(1);
+  delay(2);
 }
 
 void RampedreheRechts(){         //leichtes Korrigieren rechts auf Rampe (geringer)
@@ -120,7 +113,6 @@ void RampedreheRechts(){         //leichtes Korrigieren rechts auf Rampe (gering
   analogWrite(rechtsR, 100);
   analogWrite(linksV, 255);
   analogWrite(linksR, 0);
-  Serial.println("Rechts");
   delay(2);
 }
 
@@ -129,7 +121,6 @@ void RampedreheLinks(){          //leichtes Korrigieren links auf Rampe (geringe
   analogWrite(rechtsR, 0);
   analogWrite(linksV, 0);
   analogWrite(linksR, 100);
-  Serial.println("Links");
   delay(2);
 }
 
@@ -142,8 +133,7 @@ void RaumGerade(){               //schnell gerade im Raum
   analogWrite(rechtsR, 240+10);
   analogWrite(linksV, 0);
   analogWrite(linksR, 240);
-  Serial.println("Zurück");
-  delay(1);
+  delay(2);
 }
 
 void RaumGeradeRechts(){         //schnell gerade mit Rechtsdrall im Raum
@@ -167,8 +157,7 @@ void RechtsBack(){               //nur rechts rückwärts
   analogWrite(rechtsR, 250);
   analogWrite(linksV, 0);
   analogWrite(linksR, 0);
-  Serial.println("Gerade");
-  delay(1);
+  delay(2);
 }
 
 void RaumGeradeLinks(){          //schnell gerade mit Linksdrall im Raum
@@ -176,8 +165,7 @@ void RaumGeradeLinks(){          //schnell gerade mit Linksdrall im Raum
   analogWrite(rechtsR, 240-10);
   analogWrite(linksV, 0);
   analogWrite(linksR, 240+15);
-  Serial.println("Zurück");
-  delay(1);
+  delay(2);
 }
 
 void RaumLinks(){                //linksdrehen im Raum
@@ -193,8 +181,7 @@ void LinksBack(){                //nur links rückwärts
   analogWrite(rechtsR, 0);
   analogWrite(linksV, 0);
   analogWrite(linksR, 250);
-  Serial.println("Gerade");
-  delay(1);
+  delay(2);
 }
 
 
