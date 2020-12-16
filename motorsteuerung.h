@@ -130,9 +130,9 @@ void RampedreheLinks(){          //leichtes Korrigieren links auf Rampe (geringe
 
 void RaumGerade(){               //schnell gerade im Raum
   analogWrite(rechtsV, 0);
-  analogWrite(rechtsR, 240+10);
+  analogWrite(rechtsR, 240);
   analogWrite(linksV, 0);
-  analogWrite(linksR, 240);
+  analogWrite(linksR, 235);
   delay(2);
 }
 
@@ -168,7 +168,7 @@ void RaumGeradeLinks(){          //schnell gerade mit Linksdrall im Raum
   delay(2);
 }
 
-void RaumLinks(){                //linksdrehen im Raum
+void RaumLinks(){                //Linksdrehen im Raum
   analogWrite(rechtsV, v2);
   analogWrite(rechtsR, 0);
   analogWrite(linksV, 0);
